@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
           title: Text('Welcome to Flutter'),
         ),
         body: Center(
-          child: Icon(
-            Icons.star,
-            color: Colors.red[500],
+          child: Image.asset(
+            'assets/practice.png',
+            fit: BoxFit.cover,
           ),
         ),
       ),
