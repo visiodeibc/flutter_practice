@@ -13,16 +13,24 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Column(
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
-                child: Image.asset('assets/twitter.jpg'),
+              Row(
+                children: [
+                  Expanded(
+                    child: Image.asset('assets/oasis.png'),
+                  ),
+                  Expanded(
+                    child: Image.asset('assets/google.jpg'),
+                  ),
+                  Expanded(
+                    child: Image.asset('assets/practice.png'),
+                  ),
+                ],
               ),
               Expanded(
-                child: Image.asset('assets/google.jpg'),
-              ),
-              Expanded(
-                child: Image.asset('assets/practice.png'),
+                child: ratings,
               ),
             ],
           ),
@@ -31,3 +39,33 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+var star = Row(
+  mainAxisSize: MainAxisSize.max,
+  children: [
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+  ],
+);
+final ratings = Container(
+  padding: EdgeInsets.all(20),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      star,
+      Text(
+        '170 Reviews',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w800,
+          fontFamily: 'Roboto',
+          letterSpacing: 0.5,
+          fontSize: 20,
+        ),
+      ),
+    ],
+  ),
+);
