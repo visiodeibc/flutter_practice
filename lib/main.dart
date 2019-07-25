@@ -46,5 +46,3 @@ Widget _buildImageRow(int imageIndex) => Row(
         _buildDecoratedImage(imageIndex + 1),
       ],
     );
-
-flsdkjf
