@@ -12,9 +12,19 @@ class MyApp extends StatelessWidget {
           title: Text('Welcome to Flutter'),
         ),
         body: Center(
-          child: Image.asset(
-            'assets/practice.png',
-            fit: BoxFit.cover,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: Image.asset('assets/twitter.jpg'),
+              ),
+              Expanded(
+                child: Image.asset('assets/google.jpg'),
+              ),
+              Expanded(
+                child: Image.asset('assets/practice.png'),
+              ),
+            ],
           ),
         ),
       ),
