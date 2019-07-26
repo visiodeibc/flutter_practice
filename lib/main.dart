@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import '1-columns_and_rows.dart';
+import '2-standard,material-widget.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(StandardMaterialWidget());
 
-class MyApp extends StatelessWidget {
+class ColumnsandRows extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,38 +13,37 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(child: _buildImageColumn()),
+        body: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              pictureRow,
+              Column(
+                children: [ratings, iconList],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
 
-Widget _buildImageColumn() => Container(
-      decoration: BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          _buildImageRow(1),
-          _buildImageRow(3),
-        ],
-      ),
-    );
-
-Widget _buildDecoratedImage(int imageIndex) => Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(width: 10, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+class StandardMaterialWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
         ),
-        margin: const EdgeInsets.all(4),
-        child: Image.asset('assets/pic$imageIndex.jpg'),
+        body: Center(child:buildImageColumn()),
       ),
     );
+  }
+}
 
-Widget _buildImageRow(int imageIndex) => Row(
-      children: [
-        _buildDecoratedImage(imageIndex),
-        _buildDecoratedImage(imageIndex + 1),
-      ],
-    );
+
