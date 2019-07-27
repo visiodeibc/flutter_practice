@@ -40,7 +40,7 @@ class StandardMaterialWidget extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(child:buildGrid()),
+        body: Center(child:buildStack()),
       ),
     );
   }
